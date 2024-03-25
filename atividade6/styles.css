@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 24px;
+    gap: 6px;
+
+    max-width: 450px;
+    border-radius: 10px;
+    border: 1.5px solid #111;
+
+    margin: 0 auto;
+  }
+  input {
+    padding: 10px 15px;
+    max-width: 350px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #eee;
+  }
+  button {
+    padding: 15px 20px;
+    background-color: #5990e8;
+    border: 0;
+    border-radius: 10px;
+    color: #EEE;
+    margin-top: 20px;
+  }
+  h1,h2 {
+    text-align: center;
+  }
