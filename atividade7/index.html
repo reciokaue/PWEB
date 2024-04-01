@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Pedra, Papel e Tesoura</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main>
+        <h1>Jogo Pedra, Papel e Tesoura</h1>
+        
+        <div id="result-header">
+            <h1>Resultado</h1>
+            <div class="result-list">
+                <div class="result-card">
+                    <img src="" alt="" id="user-image" class="result-image">
+                    <h2 id="result"></h2>
+                    <img src="" alt="" id="robot-image" class="result-image">
+                </div>
+            </div>
+        </div>
+
+        <div id="options">
+            <button onclick="play('pedra')">
+                <img src='./rocks.png' class="image"/>
+                Pedra
+            </button>
+            <button onclick="play('papel')">
+                <img src='./paper.png' class="image"/>
+                Papel
+            </button>
+            <button onclick="play('tesoura')">
+                <img src='./scissors.png' class="image"/>
+                Tesoura
+            </button>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
