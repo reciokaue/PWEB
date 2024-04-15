@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilizando Funções JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Utilizando Funções JavaScript</h1>
+
+    <div class="mb-4">
+      <h2 class="text-lg font-semibold mb-2">Teste das Funções:</h2>
+      
+      <div class="flex flex-col gap-2 mb-2">
+        <label for="arrayInput" class="block text-sm font-medium text-gray-700 mb-1">Arrays:</label>
+        <input id="arrayInput" type="text" class="border-gray-300 bg-gray-100 mb-2 p-2 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm w-full inline-block" placeholder="Insira os números separados por vírgula">
+        <div class="flex gap-1 justify-end">
+            <button onclick="handleSort()" class="bg-blue-500 self-end hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded">Crescente</button>
+            <button onclick="testMaior()" class="bg-blue-500 self-end hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded">Maior</button>
+        </div>
+        <p id="result-maior" class="mt-2 self-center"></p>
+      </div>
+
+      <div class="flex flex-col gap-2 mb-2">
+        <label for="stringInput" class="block text-sm font-medium text-gray-700 mb-1">Verificar palíndromo:</label>
+        <input id="stringInput" type="text" class="border-gray-300 bg-gray-100 mb-2 p-2 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm w-full inline-block" placeholder="Insira a string">
+        <button onclick="testPalindromo()" class="bg-blue-500 self-end hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded">Testar</button>
+        <p id="result-palindromo" class="mt-2 self-center"></p>
+      </div>
+
+    <div class="flex flex-col gap-2 mb-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Verificar Triângulo:</label>
+        <input id="aInput" type="number" class="border-gray-300 bg-gray-100 mb-2 p-2 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm w-full inline-block" placeholder="Insira o lado A">
+        <input id="bInput" type="number" class="border-gray-300 bg-gray-100 mb-2 p-2 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm w-full inline-block" placeholder="Insira o lado B">
+        <input id="cInput" type="number" class="border-gray-300 bg-gray-100 mb-2 p-2 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm w-full inline-block" placeholder="Insira o lado C">
+        <button onclick="testTriangulo()" class="bg-blue-500 self-end hover:bg-blue-600 text-white font-bold py-2 px-4 ml-2 rounded">Testar</button>
+        <p id="result-tri" class="mt-2 self-center"></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
