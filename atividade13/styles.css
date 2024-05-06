@@ -1,0 +1,19 @@
+.container {
+   width: 100vw;
+   height: 100vh;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#status {
+    font-size: 25px;
+    margin-bottom: 24px;
+}
+
+img {
+    width: 30%;
+    height: auto;
+}
