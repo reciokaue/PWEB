@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <!-- Incluindo Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4">
+    <form id="meuFormulario" class="max-w-md mx-auto bg-white shadow-md rounded px-8 py-6 mb-4" onsubmit="return validar()">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
+          Nome:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nome" type="text" placeholder="Nome" name="nome" required minlength="10">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email:
+        </label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="comentario">
+          Comentário:
+        </label>
+        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="comentario" placeholder="Comentário" name="comentario" required minlength="20"></textarea>
+      </div>
+      <div class="mb-4">
+        <p class="block text-gray-700 text-sm font-bold mb-2">Pesquisa:</p>
+        <label class="inline-flex items-center">
+          <input type="radio" class="form-radio h-5 w-5 text-blue-600" name="pesquisa" value="sim" required>
+          <span class="ml-2">Sim</span>
+        </label>
+        <label class="inline-flex items-center ml-6">
+          <input type="radio" class="form-radio h-5 w-5 text-blue-600" name="pesquisa" value="nao" required>
+          <span class="ml-2">Não</span>
+        </label>
+      </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function validar() {
+      var nome = document.getElementById('nome').value;
+      var email = document.getElementById('email').value;
+      var comentario = document.getElementById('comentario').value;
+      var pesquisa = document.querySelector('input[name="pesquisa"]:checked');
+
+      if (nome.length < 10) {
+        alert("O nome deve ter pelo menos 10 caracteres.");
+        return false;
+      }
+
+      if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+        alert("Por favor, insira um endereço de email válido.");
+        return false;
+      }
+
+      if (comentario.length < 20) {
+        alert("O comentário deve ter pelo menos 20 caracteres.");
+        return false;
+      }
+
+      if (!pesquisa) {
+        alert("Por favor, responda à pesquisa.");
+        return false;
+      }
+
+      var resposta = pesquisa.value === 'sim' ? "Que bom que você voltou a visitar esta página!" : "Volte sempre a esta página!";
+      alert(resposta);
+      return true;
+    }
+  </script>
+</body>
+</html>
