@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professores</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <h1>Professores</h1>
-    <ul>
-        <li>Denilce</li>
-        <li>Maria Angélia</li>
-        <li>Ana Carolina</li>
-    </ul>
-</body>
+
+    <table border="1" cellpadding="5px" cellspacing="0" id="tabela1">
+      <tr>
+        <td>Nome</td>
+        <td>Email</td>
+      </tr>
+      <% for(var i=0; i<profs.length; i++) {%>
+        <tr>
+          <td><%= profs[i].NOME_PROFESSOR %></td>
+          <td><%= profs[i].EMAIL_PROFESSOR %></td>
+        </tr>
+      <% } %> 
+    </table>
+  </body>
 </html>

@@ -1,24 +1,21 @@
-var app = require('./app/config/server'); //Carregando o módulo do servidor.
+const express = require('express');
+const app = express(); //Executando o express.
 
-var rotaHome = require('./app/routes/home');
+app.set('view engine', 'ejs'); //O mecanismo de engine a ser usado.
+app.set('views', './app/views'); //Diretório onde os arquivos estão localizados.
+
+const rotaHome = require('./app/routes/home');
+const rotaAdicionarUsuario = require('./app/routes/adicionar-usuario');
+const rotaHistoria = require('./app/routes/historia');
+const rotaCursos = require('./app/routes/cursos');
+const rotaProfessores = require('./app/routes/professores');
+
 rotaHome(app);
-
-var rotaAdicionarUsuario = require('./app/routes/adicionar-usuario');
 rotaAdicionarUsuario(app);
-
-var rotaHistoria = require('./app/routes/historia');
 rotaHistoria(app);
-
-var rotaCursos = require('./app/routes/cursos');
 rotaCursos(app);
-
-var rotaProfessores = require('./app/routes/professores');
 rotaProfessores(app);
 
-// Poderia executar assim também
-// var rotaAdicionarUsuario = require('./app/routes/adicionar-usuario') (app);
-
-app.listen(3000, function()
-{
-    console.log("Servidor iniciado.");
+app.listen(3000, function(){
+  console.log("Servidor iniciado.");
 });
